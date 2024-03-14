@@ -1,0 +1,4 @@
+baseURL = 'https://ldach.pl/'
+languageCode = 'pl-pl'
+title = 'L-Dach Łukasz Wojtas'
+theme = 'tailbliss'
