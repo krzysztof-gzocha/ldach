@@ -19,10 +19,10 @@ const Contact = () => {
                             </Typography>
 
                             <Typography>
-                                Śląsk ul.Ks.Szwedy 6b
+                                ul.Ks.Szwedy 5b/10
                             </Typography>
                             <Typography>
-                                Rybnik
+                                44-200 Rybnik
                             </Typography>
                         </CardBody>
                     </Card>
@@ -36,7 +36,7 @@ const Contact = () => {
                                 Email adress
                             </Typography>
                             <Typography>
-                                bzykubaczek@op.pl
+                                lukasz.bzq@gmail.com
                             </Typography>
 
                         </CardBody>
@@ -51,10 +51,10 @@ const Contact = () => {
                                 Dane firmy
                             </Typography>
                             <Typography>
-                               NIP:4021I412
+                               NIP:6423251706
                             </Typography>
                             <Typography>
-                                Number telefonu: 49324242
+                                Number telefonu: <a href="tel:+48535266556">535 266 556</a>
                             </Typography>
                         </CardBody>
                     </Card>
