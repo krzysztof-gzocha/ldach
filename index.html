@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L-Dach | Dekarstwo i blacharstwo — Rybnik i Śląsk</title>
+  <meta name="description" content="L-Dach — dekarstwo, blacharstwo, remonty i naprawy dachów w Rybniku i na Śląsku. Zadzwoń i omów zakres prac." />
+  <meta name="theme-color" content="#111827" />
+  <meta property="og:title" content="L-Dach — Dekarstwo i blacharstwo" />
+  <meta property="og:description" content="Solidny dach. Spokojna głowa. Rybnik i okolice." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ldach.pl/" />
+
+  <style>
+    :root {
+      --bg: #f5f4f0;
+      --surface: #ffffff;
+      --surface-2: #efeee9;
+      --ink: #16181d;
+      --muted: #666b73;
+      --line: #deddd7;
+      --brand: #e6542f;
+      --brand-dark: #bf3b1f;
+      --dark: #14171c;
+      --dark-2: #1d2229;
+      --success: #2f7d5b;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --shadow: 0 20px 60px rgba(17, 24, 39, .12);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .section { padding: 112px 0; }
+    .section-title {
+      margin: 16px 0 18px;
+      max-width: 760px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 850;
+    }
+    .section-lead {
+      margin: 0;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .topbar {
+      background: #0f1217;
+      color: #cbd0d7;
+      font-size: 13px;
+    }
+    .topbar-inner {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+            font-size: clamp(19px, 2.5vw, 32px);
+      line-height: .49;
+      letter-spacing: -.022em;
+      font-weight: 600;
+    }
+    .topbar-logo {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .topbar strong { color: #fff; }
+    .topbar-links { display: flex; align-items: center; gap: 24px; }
+    .topbar a:hover { color: #fff; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(245, 244, 240, .88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(22, 24, 29, .07);
+    }
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #fff;
+      box-shadow: inset 0 -5px 12px rgba(0,0,0,.16);
+    }
+    .logo-mark svg { width: 25px; height: 25px; }
+    .logo small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #454951;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn {
+      min-height: 48px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #fff;
+      background: var(--brand);
+      box-shadow: 0 10px 24px rgba(230, 84, 47, .23);
+    }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-dark { color: #fff; background: var(--dark); }
+    .btn-ghost { background: #fff; border: 1px solid var(--line); }
+    .btn svg { width: 18px; height: 18px; }
+
+    .hero {
+      padding: 44px 0 0;
+      overflow: hidden;
+    }
+    .hero-shell {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--dark);
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 74px 64px 66px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(230,84,47,.18), transparent 35%),
+        linear-gradient(135deg, #171a20 0%, #101318 100%);
+    }
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -110px;
+      top: 92px;
+      border: 1px solid rgba(255,255,255,.08);
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+    .hero .eyebrow { color: #ff8a6b; }
+    .hero h1 {
+      margin: 18px 0 24px;
+      max-width: 650px;
+      font-size: clamp(50px, 6vw, 82px);
+      line-height: .92;
+      letter-spacing: -.06em;
+      font-weight: 900;
+    }
+    .hero h1 span { color: #ff7a58; }
+    .hero p {
+      margin: 0;
+      max-width: 610px;
+      color: #c5cad2;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .hero-actions .btn-ghost {
+      color: #fff;
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+    }
+    .hero-proof {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .proof-item strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    .proof-item span {
+      color: #8f98a4;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .proof-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 9px;
+      background: rgba(255,255,255,.07);
+      color: #ff8a6b;
+    }
+    .proof-icon svg { width: 16px; height: 16px; }
+
+    .hero-media {
+      position: relative;
+      min-height: 100%;
+      background: #2f333a;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.86) contrast(1.04);
+    }
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(16,19,24,.28), transparent 32%), linear-gradient(0deg, rgba(16,19,24,.28), transparent 45%);
+    }
+    .hero-badge {
+      position: absolute;
+      z-index: 2;
+      right: 24px;
+      bottom: 24px;
+      width: min(290px, calc(100% - 48px));
+      padding: 18px 20px;
+      color: #fff;
+      border-radius: 18px;
+      background: rgba(17, 20, 25, .82);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .hero-badge strong { display: block; font-size: 15px; margin-bottom: 5px; }
+    .hero-badge span { color: #c3c8cf; font-size: 12px; line-height: 1.5; }
+
+    .trust-strip { padding: 28px 0 0; }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.54);
+    }
+    .trust-inner p { margin: 0; color: var(--muted); font-size: 14px; }
+    .trust-items { display: flex; flex-wrap: wrap; gap: 18px 28px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; }
+    .trust-item svg { width: 18px; height: 18px; color: var(--brand); }
+
+    .services-grid {
+      margin-top: 46px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .service-card {
+      min-height: 290px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #cac8c0;
+      box-shadow: 0 18px 44px rgba(20,23,28,.08);
+    }
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #f7e9e4;
+      color: var(--brand);
+    }
+    .service-icon svg { width: 24px; height: 24px; }
+    .service-card h3 { margin: 30px 0 10px; font-size: 22px; letter-spacing: -.025em; }
+    .service-card p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .service-link { margin-top: 28px; color: var(--brand); font-size: 13px; font-weight: 850; }
+
+    .why { background: var(--surface-2); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .why-photo {
+      position: relative;
+      min-height: 590px;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .why-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .why-card {
+      position: absolute;
+      z-index: 2;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 22px;
+      color: #fff;
+      border-radius: 18px;
+      background: rgba(17,20,25,.86);
+      backdrop-filter: blur(12px);
+    }
+    .why-card strong { display: block; margin-bottom: 6px; }
+    .why-card span { color: #c6cbd2; font-size: 13px; line-height: 1.55; }
+    .benefits { margin-top: 34px; display: grid; gap: 8px; }
+    .benefit {
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      border-bottom: 1px solid #d8d6cf;
+    }
+    .benefit-num {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--brand);
+      background: #fff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .benefit h3 { margin: 1px 0 6px; font-size: 18px; letter-spacing: -.02em; }
+    .benefit p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
+
+    .process-grid {
+      position: relative;
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .process-card {
+      padding: 26px;
+      border-radius: var(--radius-md);
+      background: var(--dark);
+      color: #fff;
+    }
+    .process-step {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brand);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .process-card h3 { margin: 26px 0 10px; font-size: 18px; }
+    .process-card p { margin: 0; color: #aeb5bf; line-height: 1.6; font-size: 13px; }
+
+    .gallery {
+      background: #111419;
+      color: #fff;
+    }
+    .gallery .section-lead { color: #aeb5be; }
+    .gallery-grid {
+      margin-top: 46px;
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      grid-template-rows: 280px 280px;
+      gap: 14px;
+    }
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #2a2e35;
+    }
+    .gallery-card:first-child { grid-row: 1 / 3; }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.2,.8,.2,1);
+    }
+    .gallery-card:hover img { transform: scale(1.035); }
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.55), transparent 50%);
+      pointer-events: none;
+    }
+    .gallery-caption {
+      position: absolute;
+      z-index: 2;
+      left: 20px;
+      bottom: 18px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+    }
+    .gallery-caption strong { display: block; font-size: 15px; }
+    .gallery-caption small { display: block; margin-top: 4px; color: #d0d4da; }
+    .demo-tag {
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.22);
+      white-space: nowrap;
+    }
+    .gallery-note {
+      margin-top: 16px;
+      color: #7f8791;
+      font-size: 12px;
+    }
+
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question {
+      width: 100%;
+      min-height: 74px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .faq-question span:last-child {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e9e7e1;
+      transition: transform .2s ease;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+      transition: max-height .25s ease, padding .25s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 160px; padding: 0 40px 22px 0; }
+    .faq-item.open .faq-question span:last-child { transform: rotate(45deg); }
+
+    .contact { padding-top: 36px; }
+    .contact-shell {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--brand);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .contact-copy { padding: 58px; }
+    .contact-copy .eyebrow { color: #ffd0c3; }
+    .contact-copy h2 {
+      margin: 16px 0 18px;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+    .contact-copy p { margin: 0; color: #ffe3dc; max-width: 580px; line-height: 1.68; }
+    .contact-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .contact-buttons .btn-dark { background: #12151a; }
+    .contact-buttons .btn-ghost { color: #fff; background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); }
+    .contact-info {
+      padding: 46px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fff;
+      color: var(--ink);
+    }
+    .contact-row {
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 15px;
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-row svg { width: 22px; height: 22px; color: var(--brand); margin-top: 3px; }
+    .contact-row small { display: block; color: var(--muted); margin-bottom: 5px; }
+    .contact-row strong { font-size: 16px; }
+
+    footer { padding: 34px 0 90px; }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .footer-links { display: flex; gap: 18px; }
+
+    .mobile-menu-btn { display: none; }
+    .mobile-panel { display: none; }
+    .mobile-call {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      min-height: 54px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 12px 36px rgba(0,0,0,.25);
+      font-weight: 900;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+    .mobile-call svg { width: 18px; height: 18px; }
+
+    @media (max-width: 980px) {
+      .topbar { display: none; }
+      .nav-links, .nav-actions { display: none; }
+      .mobile-menu-btn {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .mobile-menu-btn svg { width: 20px; height: 20px; }
+      .mobile-panel {
+        padding: 12px 20px 20px;
+        border-top: 1px solid var(--line);
+        background: rgba(245,244,240,.98);
+      }
+      .mobile-panel.open { display: grid; gap: 8px; }
+      .mobile-panel a { padding: 12px 4px; font-weight: 800; }
+      .hero-shell { grid-template-columns: 1fr; }
+      .hero-copy { padding: 64px 48px; }
+      .hero-media { min-height: 480px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid, .faq-wrap { grid-template-columns: 1fr; gap: 46px; }
+      .why-photo { min-height: 520px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-shell { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .section { padding: 82px 0; }
+      .section-title { font-size: 42px; }
+      .section-lead { font-size: 16px; }
+      .nav-inner { min-height: 68px; }
+      .hero { padding-top: 12px; }
+      .hero-shell { min-height: 0; border-radius: 24px; }
+      .hero-copy { padding: 46px 24px 34px; }
+      .hero h1 { font-size: 51px; }
+      .hero p { font-size: 16px; }
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+      .hero-proof { grid-template-columns: 1fr; gap: 20px; }
+      .proof-item { display: grid; grid-template-columns: 34px 1fr; column-gap: 11px; align-items: start; }
+      .proof-icon { grid-row: 1 / 3; margin: 0; }
+      .hero-media { min-height: 340px; }
+      .hero-badge { left: 14px; right: 14px; bottom: 14px; width: auto; }
+      .trust-inner { align-items: flex-start; flex-direction: column; }
+      .trust-items { display: grid; gap: 14px; }
+      .services-grid, .process-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 250px; }
+      .why-photo { min-height: 440px; }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 420px 240px 240px;
+      }
+      .gallery-card:first-child { grid-row: auto; }
+      .faq-wrap { gap: 34px; }
+      .contact-copy, .contact-info { padding: 34px 24px; }
+      .contact-copy h2 { font-size: 44px; }
+      .contact-buttons { display: grid; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      footer { padding-bottom: 98px; }
+      .mobile-call { display: flex; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-brand">
+       <span>Dekarstwo i blacharstwo • Rybnik i Śląsk</span>
+      </div>
+      <div class="topbar-links">
+        <a href="tel:+48535266556">535 266 556</a>
+        <a href="mailto:lukasz.bzq@gmail.com">lukasz.bzq@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Główna nawigacja">
+    <div class="container nav-inner">
+ 
+
+      <div class="nav-links">
+        <a href="#uslugi">Usługi</a>
+        <a href="#dlaczego-my">Dlaczego my</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="tel:+48535266556">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.79 19.79 0 0 1 2.08 4.15 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6 6l1.24-1.24a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+          Zadzwoń
+        </a>
+      </div>
+
+      <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otwórz menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-panel container">
+      <a href="#uslugi">Usługi</a>
+      <a href="#dlaczego-my">Dlaczego my</a>
+      <a href="#realizacje">Realizacje</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+
+  <main id="start">
+    <header class="hero">
+      <div class="container hero-shell">
+        <div class="hero-copy">
+          <span class="eyebrow">Dekarstwo • Blacharstwo</span>
+          <h1>Solidny dach.<br><span>Spokojna głowa.</span></h1>
+          <p>Budowa, remont i naprawa dachów oraz fachowe prace blacharskie. Działamy w Rybniku i na terenie Śląska — konkretnie, estetycznie i z dbałością o każdy detal.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+48535266556">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.79 19.79 0 0 1 2.08 4.15 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6 6l1.24-1.24a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+              Zadzwoń: 535 266 556
+            </a>
+            <a class="btn btn-ghost" href="#uslugi">Zobacz zakres usług</a>
+          </div>
+
+          <div class="hero-proof" aria-label="Najważniejsze informacje">
+            <div class="proof-item">
+              <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <div><strong>Solidne wykonanie</strong><span>Prace z naciskiem na trwałość i estetykę.</span></div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><strong>Sprawny kontakt</strong><span>Zakres i termin omawiamy bez zbędnych formalności.</span></div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 4l9 8"/><path d="M5 10v10h14V10"/></svg></div>
+              <div><strong>Rybnik i Śląsk</strong><span>Obsługujemy inwestycje w regionie.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1763665814657-919dac53ea26?auto=format&fit=crop&q=82&w=1800" alt="Prace dekarskie przy montażu pokrycia dachowego" fetchpriority="high" />
+          <div class="hero-badge">
+            <strong>Potrzebujesz wyceny?</strong>
+            <span>Zadzwoń i opowiedz, czego dotyczy dach. Ustalimy kolejny krok i potrzebny zakres prac.</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <p>Od naprawy po kompleksową realizację dachu.</p>
+        <div class="trust-items">
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Dekarstwo</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Blacharstwo</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Remonty</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Naprawy</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="uslugi" class="section">
+      <div class="container">
+        <span class="eyebrow">Zakres prac</span>
+        <h2 class="section-title">Dach od A do Z.</h2>
+        <p class="section-lead">Dobieramy rozwiązanie do stanu budynku, zakresu prac i oczekiwanego efektu. Możesz zgłosić zarówno nową realizację, jak i naprawę istniejącego dachu.</p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13 12 5l9 8"/><path d="M5 11v9h14v-9"/></svg></div>
+              <h3>Nowe dachy</h3>
+              <p>Kompleksowe wykonanie pokrycia dachowego wraz z niezbędnymi elementami wykończeniowymi.</p>
+            </div>
+            <a class="service-link" href="#kontakt">Zapytaj o realizację →</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L4 17v3h3l5.1-5.1a4 4 0 0 0 5.6-5.6l-2.2 2.2-3-3z"/></svg></div>
+              <h3>Remonty dachów</h3>
+              <p>Wymiana zużytych elementów, odświeżenie pokrycia i prace remontowe dopasowane do stanu dachu.</p>
+            </div>
+            <a class="service-link" href="#kontakt">Omów remont →</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19 19 4"/><path d="M7 4h12v12"/><path d="M4 12v7h7"/></svg></div>
+              <h3>Obróbki blacharskie</h3>
+              <p>Estetyczne i szczelne wykończenia newralgicznych miejsc dachu oraz elementów blacharskich.</p>
+            </div>
+            <a class="service-link" href="#kontakt">Zapytaj o zakres →</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v4H4z"/><path d="M6 9v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9"/><path d="M9 13h6"/></svg></div>
+              <h3>Rynny i odwodnienie</h3>
+              <p>Montaż i wymiana elementów systemu odprowadzania wody z dachu oraz korekta problematycznych miejsc.</p>
+            </div>
+            <a class="service-link" href="#kontakt">Skonsultuj problem →</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/><path d="m5 5 14 14M19 5 5 19"/></svg></div>
+              <h3>Naprawy i konserwacja</h3>
+              <p>Drobne i większe naprawy, usuwanie nieszczelności oraz prace pomagające utrzymać dach w dobrym stanie.</p>
+            </div>
+            <a class="service-link" href="#kontakt">Zgłoś naprawę →</a>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/><path d="M8 11h6"/></svg></div>
+              <h3>Oględziny i doradztwo</h3>
+              <p>Ocena sytuacji i omówienie możliwych wariantów przed rozpoczęciem właściwych prac.</p>
+            </div>
+            <a class="service-link" href="#kontakt">Umów kontakt →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dlaczego-my" class="section why">
+      <div class="container why-grid">
+        <div class="why-photo">
+          <img src="https://images.unsplash.com/photo-1726589004565-bedfba94d3a2?auto=format&fit=crop&q=82&w=1400" alt="Dekarz podczas prac na dachu" loading="lazy" />
+          <div class="why-card">
+            <strong>Najpierw diagnoza, potem działanie.</strong>
+            <span>Dobry efekt zaczyna się od właściwego rozpoznania problemu i sensownego zakresu prac.</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow">Dlaczego L-Dach</span>
+          <h2 class="section-title">Bez skrótów tam, gdzie liczy się trwałość.</h2>
+          <p class="section-lead">Dach ma chronić budynek przez lata, dlatego stawiamy na rozsądne rozwiązania, dokładne wykonanie i czytelny kontakt z klientem.</p>
+
+          <div class="benefits">
+            <div class="benefit">
+              <div class="benefit-num">01</div>
+              <div><h3>Indywidualne podejście</h3><p>Każdy dach ma inne warunki i problemy — zakres prac dobieramy do konkretnej sytuacji.</p></div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-num">02</div>
+              <div><h3>Dbałość o detale</h3><p>Obróbki, połączenia i wykończenia są równie ważne jak samo pokrycie.</p></div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-num">03</div>
+              <div><h3>Materiały dobrane do zadania</h3><p>Rozwiązania dobieramy tak, aby pasowały do budynku, warunków i oczekiwanego efektu.</p></div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-num">04</div>
+              <div><h3>Kontakt bez komplikacji</h3><p>Telefon, krótkie ustalenie potrzeb i konkretny kolejny krok.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Jak zaczynamy</span>
+        <h2 class="section-title">Prosty proces od telefonu do realizacji.</h2>
+        <div class="process-grid">
+          <article class="process-card"><span class="process-step">1</span><h3>Kontakt</h3><p>Dzwonisz lub piszesz i krótko opisujesz, czego potrzebujesz.</p></article>
+          <article class="process-card"><span class="process-step">2</span><h3>Rozpoznanie</h3><p>Ustalamy zakres problemu oraz informacje potrzebne do dalszych działań.</p></article>
+          <article class="process-card"><span class="process-step">3</span><h3>Ustalenia</h3><p>Omawiamy możliwe rozwiązanie, zakres prac i organizację realizacji.</p></article>
+          <article class="process-card"><span class="process-step">4</span><h3>Wykonanie</h3><p>Realizujemy uzgodnione prace z naciskiem na solidne wykończenie.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="realizacje" class="section gallery">
+      <div class="container">
+        <span class="eyebrow">Realizacje</span>
+        <h2 class="section-title">Praca, którą najlepiej pokazują zdjęcia.</h2>
+        <p class="section-lead">W finalnej wersji strony wstaw tutaj własne zdjęcia dachów — najlepiej 6–12 mocnych realizacji zamiast przypadkowych zdjęć stockowych.</p>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1763665814657-919dac53ea26?auto=format&fit=crop&q=80&w=1400" alt="Przykładowe zdjęcie prac dekarskich" loading="lazy" />
+            <figcaption class="gallery-caption"><div><strong>Montaż pokrycia</strong><small>Przykładowe zdjęcie poglądowe</small></div><span class="demo-tag">Podmień na własne</span></figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1726589004565-bedfba94d3a2?auto=format&fit=crop&q=80&w=900" alt="Przykładowe zdjęcie prac na dachu" loading="lazy" />
+            <figcaption class="gallery-caption"><div><strong>Prace dekarskie</strong><small>Zdjęcie poglądowe</small></div><span class="demo-tag">Podmień</span></figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=900" alt="Przykładowe zdjęcie remontu dachu" loading="lazy" />
+            <figcaption class="gallery-caption"><div><strong>Remont dachu</strong><small>Zdjęcie poglądowe</small></div><span class="demo-tag">Podmień</span></figcaption>
+          </figure>
+        </div>
+        <div class="gallery-note">Ważne: te 3 fotografie są tylko do makiety. Przed publikacją podmień je na realne realizacje L-Dach — to najmocniej zwiększy wiarygodność strony.</div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container faq-wrap">
+        <div>
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title">Najczęstsze pytania.</h2>
+          <p class="section-lead">Nie wiesz, od czego zacząć? Najprościej zadzwonić. Wstępnie ustalimy, czego dotyczy temat i co będzie potrzebne dalej.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-question" type="button"><span>Na jakim obszarze działacie?</span><span>+</span></button>
+            <div class="faq-answer">Bazujemy w Rybniku i realizujemy prace na terenie Śląska. Przy konkretnym zleceniu najlepiej potwierdzić lokalizację telefonicznie.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button"><span>Czy zajmujecie się także naprawami dachów?</span><span>+</span></button>
+            <div class="faq-answer">Tak. Możesz zgłosić zarówno remont, jak i naprawę lub konserwację istniejącego dachu. Zakres zależy od stanu pokrycia i źródła problemu.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button"><span>Jak przygotować się do pierwszego kontaktu?</span><span>+</span></button>
+            <div class="faq-answer">Wystarczy krótki opis problemu, lokalizacja i — jeśli masz — kilka zdjęć dachu. Dzięki temu łatwiej ustalić następny krok.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button"><span>Czy wykonujecie obróbki blacharskie?</span><span>+</span></button>
+            <div class="faq-answer">Tak, blacharstwo jest częścią oferty L-Dach. Szczegółowy zakres warto ustalić przy konkretnym dachu.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section contact">
+      <div class="container contact-shell">
+        <div class="contact-copy">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Masz dach do zrobienia? Porozmawiajmy.</h2>
+          <p>Opisz krótko, czego potrzebujesz. Najszybciej złapiesz nas telefonicznie — ustalimy lokalizację, zakres i kolejny krok.</p>
+          <div class="contact-buttons">
+            <a class="btn btn-dark" href="tel:+48535266556">Zadzwoń: 535 266 556</a>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.79 19.79 0 0 1 2.08 4.15 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6 6l1.24-1.24a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+            <div><small>Telefon</small><strong><a href="tel:+48535266556">535 266 556</a></strong></div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <div><small>E-mail</small><strong><a href="mailto:lukasz.bzq@gmail.com">lukasz.bzq@gmail.com</a></strong></div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><small>Adres</small><strong>ul. Ks. Szwedy 5b/10, 44-200 Rybnik</strong></div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            <div><small>Dane firmy</small><strong>NIP: 6423251706</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Damian Olech Software. Wszelkie prawa zastrzeżone.</div>
+      <div class="footer-links"><a href="#start">Do góry ↑</a><a href="#kontakt">Kontakt</a></div>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+48535266556" aria-label="Zadzwoń do L-Dach">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.79 19.79 0 0 1 2.08 4.15 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6 6l1.24-1.24a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+    Zadzwoń: 535 266 556
+  </a>
+
+  <script>
+    const menuButton = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('#mobile-menu');
+
+    menuButton?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        button.closest('.faq-item').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
